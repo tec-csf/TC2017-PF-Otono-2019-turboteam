@@ -85,4 +85,5 @@ Donde X es el número de threads deseados y METODO es el tipo de schedule desead
 
 ## 10. Referencias
 
-*[Incluya aquí las referencias a sitios de interés y cualquier otra información que haya utilizado para realizar el proyecto y que le puedan ser de utilidad a otras personas que quieran usarlo como referencia]*
+https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
+https://www.tutorialspoint.com/cplusplus-program-to-solve-n-queen-problem
