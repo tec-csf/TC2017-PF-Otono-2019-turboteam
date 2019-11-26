@@ -48,19 +48,19 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 ## 2. Descripción del problema
 
-*[En este problema se intente obtener cuántas diferentes configuraciones existen para 8 reinas de ajedrez dentro de un tablero de n x n espacios sin que se amenacen entre ellas.]*
+*En este problema se intente obtener cuántas diferentes configuraciones existen para 8 reinas de ajedrez dentro de un tablero de n x n espacios sin que se amenacen entre ellas.*
 
 ## 3. Solución secuencial
 
-*[Nuestro algoritmo comienza colocando una reina en la esquina superior izquierda del tablero y después genera una combinación de las reinas que cumpla las reglas. Cada thread tiene asignado resolver un tablero teniendo la posición de la reina como pnto inicial, así que cada thread resuelve un tablero diferente cuando se paralelice.]*
+*Nuestro algoritmo comienza colocando una reina en la esquina superior izquierda del tablero y después genera una combinación de las reinas que cumpla las reglas. Cada thread tiene asignado resolver un tablero teniendo la posición de la reina como pnto inicial, así que cada thread resuelve un tablero diferente cuando se paralelice.*
 
 ## 4. Análisis de los inhibidores del paralelismo
 
-*[En este problema usualmente se necesita saber la localización de todas las reinas anteriormente colocadas, para que no se ataquen entre ellas; sin embargo al momento de implementar la paralelización se puede usar la cláusula shared, esta nos ayudará a que no se coloque ninguna reina que entre en conflicto con la que esté colocando algún otro thread. También se comparte la i entre todos los threads para que no se coloquen dos reinas en la misma columna.]*
+*En este problema usualmente se necesita saber la localización de todas las reinas anteriormente colocadas, para que no se ataquen entre ellas; sin embargo al momento de implementar la paralelización se puede usar la cláusula shared, esta nos ayudará a que no se coloque ninguna reina que entre en conflicto con la que esté colocando algún otro thread. También se comparte la i entre todos los threads para que no se coloquen dos reinas en la misma columna.*
 
 ## 5. Solución paralela
 
-*[En la versión paralela se ejecuta casi el mismo código, solo que se toman en cuenta los inhibidores indicados y se usó la cláusula reduction para uno de los valores que contiene la respuesta.]*
+*En la versión paralela se ejecuta casi el mismo código, solo que se toman en cuenta los inhibidores indicados y se usó la cláusula reduction para uno de los valores que contiene la respuesta.*
 
 ## 6. Tabla de resultados
 
@@ -72,16 +72,16 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 ## 8. Interpretación de los resultados
 
-*[Es evidente que la implementación con paralelismo resulta superior a la secuencial debido a la gran cantidad de comparaciones que se tienen que ejecutar. Solo en casos muy específicos no se nota una mejoría, esto se debe a que la cantidad de cálculos es tan pequeña que no tiene sentido hacer las operaciones de paralelismo]*
+*Es evidente que la implementación con paralelismo resulta superior a la secuencial debido a la gran cantidad de comparaciones que se tienen que ejecutar. Solo en casos muy específicos no se nota una mejoría, esto se debe a que la cantidad de cálculos es tan pequeña que no tiene sentido hacer las operaciones de paralelismo*
 
 ## 9. Guía paso a paso
 
-*[Primero se compila el código con un compilador de c++ con el comando:
+*Primero se compila el código con un compilador de c++ con el comando:
 g++ -fopenmp  Queen.cpp
 donde Queen.cpp es el nombre del tipo de ejecución deseado; ya sea secuencial, paralelo o comparativo.
 Posteriormente se ejecuta con el comando:
 OMP_NUM_THREADS=X SCHEDULE=METODO ./a.out
-Donde X es el número de threads deseados y METODO es el tipo de schedule deseado; se pueden usar static, dynamic, grouped o auto.]*
+Donde X es el número de threads deseados y METODO es el tipo de schedule deseado; se pueden usar static, dynamic, grouped o auto.*
 
 ## 10. Referencias
 
