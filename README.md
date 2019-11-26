@@ -39,7 +39,7 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 * Descripción del problema a resolver.
 * Descripción de la solución secuencial con referencia (enlace) al código secuencial alojado en la carpeta [secuencial](/Secuencial).
 * Análisis de los inhibidores de paralelismo presente y una explicación de cómo se solucionaron.
-* Descripción de la solución paralela con referencia (enlace) al código paralelo alojado en la carpeta [paralelo](paralelo/).
+* Descripción de la solución paralela con referencia (enlace) al código paralelo alojado en la carpeta [paralelo](Parallel/).
 * Tabla de resultados con los tiempos de ejecución medidos para cada variante de la solución secuencial vs. la solución paralela, teniendo en cuenta: 5 tamaños diferentes de las entradas, 5 opciones diferentes de números de CPU (threads), 4 ocpiones diferentes de balanceo (*auto, guided, static, dynamic*).
 * Gráfica(s) comparativa(s) de los resultados obtenidos en las mediciones.
 * Interpretación de los resultados obtenidos.
@@ -64,11 +64,11 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 ## 6. Tabla de resultados
 
-*[Incluya aquí la tabla con los resultados de las mediciones.]*
+*[tablas](/docs)*
 
 ## 7. Gráfica(s) comparativa(s)
 
-*[Incluya aquí la(s) gráfica(s) comparativa(s).]*
+*[graficas](/docs)*
 
 ## 8. Interpretación de los resultados
 
