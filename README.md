@@ -1,4 +1,4 @@
-# *[Poner aquí el Título del Proyecto]*
+# *[Problema de las reinas]*
 ---
 #### Materia: *Análisis y Diseño de Algoritmos (TC2017)*
 
@@ -7,8 +7,8 @@
 ##### Campus: *Santa Fe*
 
 ##### Integrantes:
-1. *[Poner aquí Nombre y Apellidos del integrante 1]* *[Matrícula]*
-2. *[Poner aquí Nombre y Apellidos del integrante 2]* *[Matrícula]*
+1. *[Rafael Díaz]* *[A01024592]*
+2. *[David Benjamin Ruiz Salazar]* *[A01020825]*
 
 ---
 ## 1. Aspectos generales
@@ -28,6 +28,7 @@ El proyecto debe seguir la siguiente estructura de carpetas:
     - README.md			# este archivo
     - secuencial		# Carpeta con la solución secuencial
     - paralelo			# Carpeta con la solución paralela
+    - comparativo       # Carpeta que contiene ambas soluciones en una y se comparan los tiempos 
     - docs              # Carpeta con los documentos, tablas, gráficas, imágenes
 ```
 
@@ -47,19 +48,19 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 ## 2. Descripción del problema
 
-*[Incluya aquí la descripción del problema a resolver.]*
+*[En este problema se intente obtener cuántas diferentes configuraciones existen para 8 reinas de ajedrez dentro de un tablero de n x n espacios sin que se amenacen entre ellas.]*
 
 ## 3. Solución secuencial
 
-*[Incluya aquí la descripción de la solución secuencial.]*
+*[.]*
 
 ## 4. Análisis de los inhibidores del paralelismo
 
-*[Incluya aquí el análisis de los inhibidores presentes en su problema, así como la solución a los mismos.]*
+*[En este problema usualmente se necesita saber la localización de todas las reinas anteriormente colocadas, para que no se ataquen entre ellas; sin embargo al momento de implementar la paralelización se puede usar la cláusula shared, esta nos ayudará a que no se coloque ninguna reina que entre en conflicto con la que esté colocando algún otro thread. También se comparte la i entre todos los threads para que no se coloquen dos reinas en la misma columna.]*
 
 ## 5. Solución paralela
 
-*[Incluya aquí la descripción de la solución paralela.]*
+*[En la versión paralela se ejecuta casi el mismo código, solo que se toman en cuenta los inhibidores indicados y se usó la cláusula reduction para uno de los valores que contiene la respuesta.]*
 
 ## 6. Tabla de resultados
 
@@ -71,11 +72,16 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 ## 8. Interpretación de los resultados
 
-*[Incluya aquí la interpretación de los resultados.]*
+*[Es evidente que la implementación con paralelismo resulta superior a la secuencial debido a la gran cantidad de comparaciones que se tienen que ejecutar. Solo en casos muy específicos no se nota una mejoría, esto se debe a que la cantidad de cálculos es tan pequeña que no tiene sentido hacer las operaciones de paralelismo]*
 
 ## 9. Guía paso a paso
 
-*[Incluya aquí la guía para la ejecución de los códigos.]*
+*[Primero se compila el código con un compilador de c++ con el comando:
+g++ -fopenmp  Queen.cpp
+donde Queen.cpp es el nombre del tipo de ejecución deseado; ya sea secuencial, paralelo o comparativo.
+Posteriormente se ejecuta con el comando:
+OMP_NUM_THREADS=X SCHEDULE=METODO ./a.out
+Donde X es el número de threads deseados y METODO es el tipo de schedule deseado; se pueden usar static, dynamic, grouped o auto.]*
 
 ## 10. Referencias
 
