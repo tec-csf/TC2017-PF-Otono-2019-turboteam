@@ -59,7 +59,7 @@ int fy[]={-1,+1,+0,+0,+1,+1,-1,-1};
 
 int n;
 
-int call2(int col,int rowmask,int dia1,int dia2)
+int call2(int col,int rowmask,int move1,int move2)
 {
 	if(col==n) 
 	{
@@ -69,9 +69,9 @@ int call2(int col,int rowmask,int dia1,int dia2)
 	int row,ans=0;
 	for(row=0;row<n;row++)
 	{
-		if(!(rowmask & (1<<row)) & !(dia1 & (1<<(row+col))) & !(dia2 & (1<<((row+n-1)-col))))
+		if(!(rowmask & (1<<row)) & !(move1 & (1<<(row+col))) & !(move2 & (1<<((row+n-1)-col))))
 		{			
-			ans+=call2(col+1,rowmask|1<<row,dia1|(1<<(row+col)), dia2|(1<<((row+n-1)-col)));
+			ans+=call2(col+1,rowmask|1<<row,move1|(1<<(row+col)), move2|(1<<((row+n-1)-col)));
 		}
 	}
 	return ans;
@@ -82,14 +82,14 @@ double parallel()
 	double st=omp_get_wtime();
 	int ans=0;
 	int i;
-	int rowmask=0,dia1=0,dia2=0;
+	int rowmask=0,move1=0,move2=0;
 	 #pragma omp parallel for reduction(+:ans) shared(i,rowmask)
 	for(i=0;i<n;i++)
 	{
 		rowmask=0;
-		dia1=0,dia2=0;
+		move1=0,move2=0;
 		int col=0,row=i;
-		ans+=call2(1,rowmask|1<<row,dia1|(1<<(row+col)), dia2|(1<<((row+n-1)-col)));
+		ans+=call2(1,rowmask|1<<row,move1|(1<<(row+col)), move2|(1<<((row+n-1)-col)));
 	}
 	printf("Found %d configuration for n=%d\n",ans,n);
 	double en=omp_get_wtime();
