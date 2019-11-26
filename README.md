@@ -27,7 +27,7 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 - / 			        # Raíz de todo el proyecto
     - README.md			# este archivo
     - secuencial		# Carpeta con la solución secuencial
-    - paralelo			# Carpeta con la solución paralela
+    - parallel			# Carpeta con la solución paralela
     - comparativo       # Carpeta que contiene ambas soluciones en una y se comparan los tiempos 
     - docs              # Carpeta con los documentos, tablas, gráficas, imágenes
 ```
