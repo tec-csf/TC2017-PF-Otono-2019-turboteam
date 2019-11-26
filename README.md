@@ -86,4 +86,5 @@ Donde X es el número de threads deseados y METODO es el tipo de schedule desead
 ## 10. Referencias
 
 https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
+
 https://www.tutorialspoint.com/cplusplus-program-to-solve-n-queen-problem
