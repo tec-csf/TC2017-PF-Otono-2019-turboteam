@@ -60,7 +60,7 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 ## 5. Solución paralela
 
-*En la versión paralela se ejecuta casi el mismo código, solo que se toman en cuenta los inhibidores indicados y se usó la cláusula reduction para uno de los valores que contiene la respuesta.*
+*En la versión paralela se paraleliza un iterador que itera de i a n que son el numero de colunas y filas que tendrá el tablero, se paraleliza ese for ya que paralelizar el metodo recursivo de call no nos ayuda mucho ya que como lo mencionamos es recursivo, se toman en cuenta los inhibidores indicados y se usó la cláusula reduction para uno de los valores que contiene la respuesta.*
 
 ## 6. Tabla de resultados
 
@@ -88,3 +88,5 @@ Donde X es el número de threads deseados y METODO es el tipo de schedule desead
 https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
 
 https://www.tutorialspoint.com/cplusplus-program-to-solve-n-queen-problem
+
+https://es.wikipedia.org/wiki/Problema_de_las_ocho_reinas
