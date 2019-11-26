@@ -52,7 +52,7 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 ## 3. Solución secuencial
 
-*[.]*
+*[Nuestro algoritmo comienza colocando una reina en la esquina superior izquierda del tablero y después genera una combinación de las reinas que cumpla las reglas. Cada thread tiene asignado resolver un tablero teniendo la posición de la reina como pnto inicial, así que cada thread resuelve un tablero diferente cuando se paralelice.]*
 
 ## 4. Análisis de los inhibidores del paralelismo
 
