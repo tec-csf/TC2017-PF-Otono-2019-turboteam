@@ -32,31 +32,9 @@ Example 2 OMP_NUM_THREADS=4 ./a.out
 #include <assert.h>
 #include <omp.h>
 #define stream istringstream
-#define rep(i,n) for(int i=0; i<(int)n; i++)
-#define repv(i,n) for(int i=n-1; i>=0; i--)
-#define repl(i,n) for(int i=1; i<=(int)n; i++)
-#define replv(i,n) for(int i=n; i>=1; i--)
-
-#define sz(x) (int)x.size()
-#define INF (1061109567)
-#define pb(x) push_back(x)
-#define ppb pop_back
-#define all(x) x.begin(),x.end()
-#define mem(x,y) memset(x,y,sizeof(x));
-#define eps 1e-9
-#define pii pair<int,int>
-#define pll pair<i64,i64>
-#define pmp make_pair
 using namespace std;
 #define READ(f) freopen(f, "r", stdin)
 #define WRITE(f) freopen(f, "w", stdout)
-int fx[]={+0,+0,+1,-1,-1,+1,-1,+1};
-int fy[]={-1,+1,+0,+0,+1,+1,-1,-1};
-
-#define mx 1002
-
-
-
 int n;
 
 int call2(int col,int rowmask,int move1,int move2)
